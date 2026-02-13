@@ -112,4 +112,37 @@ public class VectorUtilityTests {
 
         assertEquals(expectedResult, actualResult, 0.0001);
     }
+
+    @Test
+    @DisplayName("Should return correct norm for vector with positive elements")
+    void Norm_Positive_Success() {
+        double[] vector = {2.3, 4.3, 7.0};
+        double expectedResult = 8.5311195; 
+
+        double actualResult = vectorUtility.norm(vector);
+
+        assertEquals(expectedResult, actualResult, 0.0001);
+    }
+
+    @Test
+    @DisplayName("Should return correct norm for vector with mixed elements")
+    void Norm_Mixed_Success() {
+        double[] vector = {0.0, 3.0, 0.0, -4,0};
+        double expectedResult = 5.0; 
+
+        double actualResult = vectorUtility.norm(vector);
+
+        assertEquals(expectedResult, actualResult, 0.0001);
+    }
+
+    @Test
+    @DisplayName("Should return correct norm for vector with negative elements")
+    void Norm_Negative_Success() {
+        double[] vector = {0.0, -2.0, -2.0, -1,0};
+        double expectedResult = 3.0; 
+
+        double actualResult = vectorUtility.norm(vector);
+
+        assertEquals(expectedResult, actualResult, 0.0001);
+    }
 }
