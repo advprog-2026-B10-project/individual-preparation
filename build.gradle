@@ -40,7 +40,7 @@ checkstyleTest {
 
 sonarqube {
 	properties {
-		property "sonar.projectKey", "advprog-2026-B10-project_individual-preparation"
+		property "sonar.projectKey", "advprog-2026-b10-project_advprog-2026-b10-project-displayname"
 		property "sonar.organization", "advprog-2026-b10-project"
 		property "sonar.host.url", "https://sonarcloud.io"
 		property "sonar.gradle.skipCompile", "true"
