@@ -43,4 +43,28 @@ public class ArithmeticUtilityTests {
 
         assertEquals(expectedResult, actualResult, 0.0001);
     }
+
+    @Test
+    @DisplayName("Should subtract two positive numbers correctly")
+    void subtract_PositiveNumbers_Success() {
+        double a = 10.5;
+        double b = 4.2;
+        double expectedResult = 6.3;
+
+        double actualResult = arithmeticUtility.subtract(a, b);
+
+        assertEquals(expectedResult, actualResult, 0.0001);
+    }
+
+    @Test
+    @DisplayName("Should subtract negative numbers correctly")
+    void subtract_NegativeNumbers_Success() {
+        double a = -5.0;
+        double b = -3.0;
+        double expectedResult = -2.0;
+
+        double actualResult = arithmeticUtility.subtract(a, b);
+
+        assertEquals(expectedResult, actualResult, 0.0001);
+    }
 }
