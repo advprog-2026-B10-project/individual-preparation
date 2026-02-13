@@ -67,4 +67,40 @@ public class ArithmeticUtilityTests {
 
         assertEquals(expectedResult, actualResult, 0.0001);
     }
+
+    @Test
+    @DisplayName("Should add positive numbers correctly")
+    void add_Positive_Success() {
+        double x = 3.4;
+        double y = 9.1;
+        double expectedResult = 12.5;
+
+        double actualResult = arithmeticUtility.add(x, y);
+
+        assertEquals(expectedResult, actualResult, 0.0001);
+    }
+
+    @Test
+    @DisplayName("Should add negative numbers correctly")
+    void add_Negative_Success() {
+        double x = -2.5;
+        double y = -7.4;
+        double expectedResult = -9.9;
+
+        double actualResult = arithmeticUtility.add(x, y);
+
+        assertEquals(expectedResult, actualResult, 0.0001);
+    }
+
+    @Test
+    @DisplayName("Should add zero correctly")
+    void add_Zero_Success() {
+        double x = 12345.67;
+        double y = 0.0;
+        double expectedResult = 12345.67;
+
+        double actualResult = arithmeticUtility.add(x, y);
+
+        assertEquals(expectedResult, actualResult, 0.0001);
+    }
 }
