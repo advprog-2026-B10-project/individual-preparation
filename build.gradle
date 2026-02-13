@@ -28,8 +28,7 @@ dependencies {
 
 checkstyle {
 	toolVersion = '10.12.0'
-	configFile = file("${rootDir}/config/checkstyle/checkstyle.xml")
-}
+	configFile = file("${rootProject.projectDir}/config/checkstyle/checkstyle.xml")}
 
 checkstyleMain {
 	source = 'src/main/java'
