@@ -5,7 +5,6 @@
 
 <module name="Checker">
     <module name="TreeWalker">
-        <module name="UnusedImports"/>
         <module name="NeedBraces"/>
     </module>
 </module>
