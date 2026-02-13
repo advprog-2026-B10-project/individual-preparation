@@ -41,4 +41,75 @@ public class VectorUtilityTests {
 
         assertThrows(IllegalArgumentException.class, () -> vectorUtility.add(vector2D, vector3D));
     }
+
+    
+
+    @Test
+    @DisplayName("Should return correct dot product of two vectors")
+    void dotProduct_Success() {
+        double[] vectorA = {1.0, 2.0, 3.0};
+        double[] vectorB = {4.0, 5.0, 6.0};
+        double expectedResult = 32.0; 
+
+        double actualResult = vectorUtility.dotProduct(vectorA, vectorB);
+
+        assertEquals(expectedResult, actualResult, 0.0001);
+    }
+
+    @Test
+    @DisplayName("Should handle negative numbers correctly in dot product")
+    void dotProduct_Negative_Success() {
+        double[] vectorA = {-1.0, 2.0, -3.0};
+        double[] vectorB = {4.0, -5.0, 6.0};
+        double expectedResult = -32.0; 
+
+        double actualResult = vectorUtility.dotProduct(vectorA, vectorB);
+
+        assertEquals(expectedResult, actualResult, 0.0001);
+    }
+
+    @Test
+    @DisplayName("Should throw exception when vector dimensions mismatch in dot product")
+    void dotProduct_DimensionMismatch_ThrowsException() {
+        double[] vector2D = {1.0, 2.0};
+        double[] vector3D = {1.0, 2.0, 3.0};
+
+        assertThrows(IllegalArgumentException.class, () -> vectorUtility.dotProduct(vector2D, vector3D));
+    }
+
+    @Test
+    @DisplayName("Should return zero when one vector is all zeros")
+    void dotProduct_ZeroVector_Success() {
+        double[] vectorA = {1.0, 2.0, 3.0};
+        double[] zeroVector = {0.0, 0.0, 0.0};
+        double expectedResult = 0.0;
+
+        double actualResult = vectorUtility.dotProduct(vectorA, zeroVector);
+
+        assertEquals(expectedResult, actualResult, 0.0001);
+    }
+
+    @Test
+    @DisplayName("Should return correct dot product for single element vectors")
+    void dotProduct_SingleElement_Success() {
+        double[] vectorA = {5.0};
+        double[] vectorB = {3.0};
+        double expectedResult = 15.0;
+
+        double actualResult = vectorUtility.dotProduct(vectorA, vectorB);
+
+        assertEquals(expectedResult, actualResult, 0.0001);
+    }
+
+    @Test
+    @DisplayName("Should return correct dot product for orthogonal vectors")
+    void dotProduct_OrthogonalVectors_Success() {
+        double[] vectorA = {1.0, 0.0};
+        double[] vectorB = {0.0, 1.0};
+        double expectedResult = 0.0; 
+
+        double actualResult = vectorUtility.dotProduct(vectorA, vectorB);
+
+        assertEquals(expectedResult, actualResult, 0.0001);
+    }
 }
